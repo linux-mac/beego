@@ -143,6 +143,10 @@ func init() {
 	if err = parseConfig(appConfigPath); err != nil {
 		panic(err)
 	}
+	
+	if err = os.Chdir(AppPath); err != nil {
+		panic(err)
+	}
 }
 
 func recoverPanic(ctx *context.Context) {
